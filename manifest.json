@@ -1,0 +1,18 @@
+{
+  "name": "Google Tasks Sidebar",
+  "version": "0.1",
+  "manifest_version": 2,
+  "sidebar_action": {
+    "default_title": "Google Tasks",
+    "default_panel": "sidebar/sidebar.html"
+  },
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "*://*.google.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  }
+}
