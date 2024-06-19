@@ -14,5 +14,10 @@
   "background": {
     "scripts": ["background.js"],
     "persistent": false
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "google-tasks-sidebar@dotproto"
+    }
   }
 }
