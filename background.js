@@ -36,12 +36,12 @@ const cspPolicyDelimiter = /\s*,\s*/g;
 const cspDirectiveDelimiter = /\s*;\s*/g; 
 
 function handleCSP(header) {
-  // This "header" is what the CSP spec refers to as a [serialized CSP list][1].
-  // Basically, it's a bunch of CSPs combined together into a single string. In
-  // order to ensure that we properly handle both current way Tasks set's it's
-  // CSP and and possible future variations, we break the CSP list into it's
-  // constituent policies and directives, modify the specific directives as
-  // desired, then combine it all back together again.
+  // The value of `header` is what the CSP spec refers to as a [serialized CSP
+  // list][1]. Basically, it's a bunch of CSPs combined together into a single
+  // string. In order to ensure that we properly handle both current way Tasks
+  // set's it's CSP and potential future variations, we decompose the CSP list
+  // into it's constituent policies and directives, modify the specific
+  // directives as desired, then recombine it back into a serialized CSP list.
   //
   // [1]: https://www.w3.org/TR/CSP3/#serialized-csp-list
   const sourceCSP = header.value;
